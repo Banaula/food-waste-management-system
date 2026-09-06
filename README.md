@@ -53,5 +53,5 @@
 
 <h2>view project :</h2>
 
-<a href="https://Banaula.github.io/food-waste-management-system/index.html" > view demo</a>
+<a href="https://banaula.github.io/food-waste-management-system/home.html">view demo</a>
 
