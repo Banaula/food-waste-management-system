@@ -67,11 +67,9 @@ After setup, start the application from your local server and access the homepag
 
 ## Demo
 
-Static preview landing page:
+View Demo:
 
-https://banaula.github.io/food-waste-management-system/
-
-This is the repo’s own GitHub Pages preview for the front-end landing page. The full PHP/MySQL application still needs to run on a PHP-enabled server environment for complete functionality.
+https://kishor-23.github.io/food-donate/index.html
 
 ## License
 
