@@ -53,4 +53,4 @@
 
 <h2>view project :</h2>
 
-<a href="https://kishor-23.github.io/food-donate/index.html" > view demo</a>
+<a href="http://localhost/food-waste-management-system-main/" > view demo</a>
