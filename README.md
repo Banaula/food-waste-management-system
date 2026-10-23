@@ -67,7 +67,11 @@ After setup, start the application from your local server and access the homepag
 
 ## Demo
 
-This repository does not currently point to a live deployment that belongs to this project. If you want a public demo, set up GitHub Pages or deploy the app on a PHP hosting platform.
+Static preview landing page:
+
+https://banaula.github.io/food-waste-management-system/
+
+This is the repo’s own GitHub Pages preview for the front-end landing page. The full PHP/MySQL application still needs to run on a PHP-enabled server environment for complete functionality.
 
 ## License
 
