@@ -1,116 +1,473 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <!-- <link rel="stylesheet" href="home.css"> -->
+
+    <title>Food Donate | Welcome</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+          rel="stylesheet">
+
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --green: #168343;
+            --green-dark: #126b35;
+            --green-light: #dcfce7;
+            --text: #14251b;
+            --muted: #66776c;
+            --border: #e2eae3;
+            --white: #ffffff;
+        }
+
+        body {
+            min-height: 100vh;
+            font-family: 'Inter', sans-serif;
+            color: var(--text);
+
+            background:
+                radial-gradient(
+                    ellipse at 8% 10%,
+                    rgba(187, 247, 208, 0.42),
+                    transparent 32%
+                ),
+                radial-gradient(
+                    ellipse at 90% 95%,
+                    rgba(220, 252, 231, 0.48),
+                    transparent 34%
+                ),
+                #f7faf7;
+
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+
+            padding: 54px 20px 24px;
+            position: relative;
+            isolation: isolate;
+        }
+
+        /* Decorative background circles */
+
+        body::before,
+        body::after {
+            content: "";
+            position: fixed;
+            width: 340px;
+            height: 340px;
+            border: 1px solid rgba(22, 131, 67, 0.07);
+            border-radius: 50%;
+            z-index: -1;
+            pointer-events: none;
+        }
+
+        body::before {
+            top: -200px;
+            right: -120px;
+        }
+
+        body::after {
+            bottom: -220px;
+            left: -150px;
+        }
+
+        /* Main heading */
+
+        .logo {
+            text-align: center;
+            font-size: clamp(30px, 3.8vw, 56px);
+            line-height: 1.2;
+            font-weight: 800;
+            letter-spacing: -2px;
+            margin-bottom: 27px;
+        }
+
+        .logo b {
+            color: var(--green);
+        }
+
+        .tagline {
+            max-width: 590px;
+            text-align: center;
+            font-size: 19px;
+            line-height: 1.9;
+            color: var(--muted);
+            margin-bottom: 46px;
+        }
+
+        /* Login panel */
+
+        .login-card {
+            width: 100%;
+            max-width: 645px;
+            padding: 52px;
+            background: rgba(255, 255, 255, 0.94);
+            border: 1px solid var(--border);
+            border-radius: 32px;
+
+            box-shadow:
+                0 24px 65px rgba(26, 65, 39, 0.055),
+                0 2px 8px rgba(26, 65, 39, 0.025);
+        }
+
+        .card-heading {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .card-heading h2 {
+            font-size: 31px;
+            font-weight: 700;
+            letter-spacing: -1px;
+            margin-bottom: 12px;
+        }
+
+        .card-heading p {
+            color: var(--muted);
+            font-size: 18px;
+        }
+
+        /* Role selection */
+
+        .log {
+            display: flex;
+            flex-direction: column;
+            gap: 18px;
+        }
+
+        .log a {
+            width: 100%;
+            min-height: 102px;
+
+            display: flex;
+            align-items: center;
+            gap: 22px;
+
+            padding: 20px 25px;
+
+            background: var(--white);
+            border: 1px solid var(--border);
+            border-radius: 21px;
+
+            color: var(--text);
+            text-decoration: none;
+
+            transition:
+                border-color 0.2s ease,
+                background 0.2s ease,
+                transform 0.2s ease,
+                box-shadow 0.2s ease;
+        }
+
+        .log a:hover {
+            border-color: #a5d8b5;
+            background: #fcfffc;
+            transform: translateY(-2px);
+            box-shadow: 0 8px 22px rgba(22, 131, 67, 0.07);
+        }
+
+        .log a:focus-visible {
+            outline: 3px solid rgba(22, 131, 67, 0.3);
+            outline-offset: 3px;
+        }
+
+        /* Icon container */
+
+        .role-icon {
+            width: 61px;
+            height: 61px;
+            flex-shrink: 0;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            background: var(--green-light);
+            color: var(--green);
+            border-radius: 17px;
+
+            font-size: 24px;
+        }
+
+        /* Role text */
+
+        .role-content {
+            flex: 1;
+            min-width: 0;
+        }
+
+        .role-title {
+            display: block;
+            font-size: 20px;
+            font-weight: 700;
+            margin-bottom: 8px;
+        }
+
+        .role-description {
+            display: block;
+            color: var(--muted);
+            font-size: 16px;
+            line-height: 1.5;
+        }
+
+        /* Arrow */
+
+        .role-arrow {
+            flex-shrink: 0;
+            color: #8da095;
+            font-size: 19px;
+            transition: transform 0.2s ease, color 0.2s ease;
+        }
+
+        .log a:hover .role-arrow {
+            color: var(--green);
+            transform: translateX(4px);
+        }
+
+        /* Card bottom message */
+
+        .card-footer {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+
+            margin-top: 34px;
+            padding-top: 28px;
+            border-top: 1px solid #edf1ed;
+
+            color: var(--muted);
+            font-size: 16px;
+            line-height: 1.6;
+            text-align: center;
+        }
+
+        .card-footer i {
+            color: var(--green);
+            font-size: 19px;
+        }
+
+        /* Page footer */
+
+        .page-footer {
+            margin-top: 42px;
+            padding-bottom: 5px;
+            color: #68786e;
+            font-size: 14px;
+            line-height: 1.7;
+            text-align: center;
+        }
+
+        /* Tablet and mobile */
+
+        @media (max-width: 768px) {
+            body {
+                padding: 42px 18px 25px;
+            }
+
+            .logo {
+                font-size: clamp(29px, 5vw, 40px);
+                letter-spacing: -1.3px;
+                margin-bottom: 20px;
+            }
+
+            .tagline {
+                font-size: 15px;
+                line-height: 1.8;
+                margin-bottom: 32px;
+            }
+
+            .login-card {
+                max-width: 520px;
+                padding: 34px 26px;
+                border-radius: 24px;
+            }
+
+            .card-heading {
+                margin-bottom: 28px;
+            }
+
+            .card-heading h2 {
+                font-size: 25px;
+            }
+
+            .card-heading p {
+                font-size: 15px;
+            }
+
+            .log {
+                gap: 13px;
+            }
+
+            .log a {
+                min-height: 84px;
+                padding: 15px;
+                gap: 14px;
+                border-radius: 16px;
+            }
+
+            .role-icon {
+                width: 49px;
+                height: 49px;
+                border-radius: 13px;
+                font-size: 20px;
+            }
+
+            .role-title {
+                font-size: 16px;
+                margin-bottom: 5px;
+            }
+
+            .role-description {
+                font-size: 13px;
+            }
+
+            .role-arrow {
+                font-size: 15px;
+            }
+
+            .card-footer {
+                margin-top: 25px;
+                padding-top: 21px;
+                font-size: 13px;
+            }
+
+            .page-footer {
+                margin-top: 27px;
+                font-size: 12px;
+            }
+        }
+
+        @media (max-width: 380px) {
+            body {
+                padding-right: 12px;
+                padding-left: 12px;
+            }
+
+            .logo {
+                font-size: 28px;
+            }
+
+            .login-card {
+                padding: 25px 15px;
+            }
+
+            .log a {
+                gap: 10px;
+                padding: 12px;
+            }
+
+            .role-icon {
+                width: 42px;
+                height: 42px;
+            }
+
+            .role-description {
+                font-size: 12px;
+            }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            *,
+            *::before,
+            *::after {
+                transition: none !important;
+            }
+        }
+    </style>
 </head>
-<style>
-@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,200;0,300;0,500;0,700;0,800;1,400;1,600&display=swap');
-    
 
-
-    .logo{
-        padding-top: 30px;
-        font-size: 35px;
-        text-align: center;
-        font-family: 'Poppins', sans-serif;
-
-    }
-    .para{
-        text-align: center;
-        font-size: 30px;
-        font-family: 'Poppins', sans-serif;
-
-    }
-    a{
-        /* text-align: center; */
-        display: inline-block;
-  /* font-size: 1em; */
-  font-size: 20px;
-  background:#06C167;
-  padding: 10px 30px;
-  /* text-transform: uppercase; */
-  text-decoration: none;
-  font-weight: 500;
-  margin:10px auto 10px auto;
-  color: #fff;
-  letter-spacing: 2px;
-  transition: 0.2s;
-    }
-    a:hover {
-     letter-spacing: 6px;
-    }
-    .log{
-        /* width: 50%; */
-        margin: auto;
-        display:grid;
-        align-items: center;
-        
-    
-        /* border: 1px solid black; */
-        /* align-items: center; */
-        
-    }
-    .add{
-        margin: auto;
-        display:inline-block;
-        align-items:center;
-        padding-left: 540px;
-    }
-    #delivery{
-
-    }
-    /* .log img{
-        margin: auto;
-        width: auto;
-        height: auto;
-    } */
-
-@media only screen and (max-width: 768px) {
-    .logo{
-        font-size: 30px;
-        padding:50px 50px 20px 50px;
-    }
-    .para{
-        font-size: 20px;
-    }
-    a{
-        font-size: 18px;
-    }
-    .add{
-        margin: auto;
-        display:inline-block;
-        align-items:center;
-        padding-left: 30px;
-    }
-}
-</style>
 <body>
-    <p class="logo"> Welcome to Food <b style="color: #06C167; ">Donate</b></p>
-    <p class="para"> Login as</p>
-<div class="log">
-    <!-- <img src="userlog.jpg" alt=""> -->
-    <a href="signup.php">User </a>
-    <a href="admin/signup.php">Admin</a>
-    <i class="fa-solid fa-moped"></i>
- 
-    <a href="delivery/deliverysignup.php" id="delivery">    <i class="fa-regular fa-moped"></i> Delivery</a>
-   
-  
-</div>
 
-<div class="add">
- 
-</div>
+    <p class="logo">
+        Welcome to Food <b>Donate</b>
+    </p>
 
+    <p class="tagline">
+        Making surplus food meaningful by connecting people,
+        administrators and delivery partners.
+    </p>
 
-    
+    <main class="login-card">
+
+        <div class="card-heading">
+            <h2>Choose your role</h2>
+            <p>Select an option below to continue.</p>
+        </div>
+
+        <div class="log">
+
+            <a href="signup.php">
+                <span class="role-icon">
+                    <i class="fa-solid fa-user"></i>
+                </span>
+
+                <span class="role-content">
+                    <span class="role-title">User</span>
+                    <span class="role-description">
+                        Donate food or discover available donations.
+                    </span>
+                </span>
+
+                <i class="fa-solid fa-arrow-right role-arrow"></i>
+            </a>
+
+            <a href="admin/signup.php">
+                <span class="role-icon">
+                    <i class="fa-solid fa-user-shield"></i>
+                </span>
+
+                <span class="role-content">
+                    <span class="role-title">Admin</span>
+                    <span class="role-description">
+                        Manage the platform and oversee activities.
+                    </span>
+                </span>
+
+                <i class="fa-solid fa-arrow-right role-arrow"></i>
+            </a>
+
+            <a href="delivery/deliverysignup.php" id="delivery">
+                <span class="role-icon">
+                    <i class="fa-solid fa-truck-fast"></i>
+                </span>
+
+                <span class="role-content">
+                    <span class="role-title">Delivery Partner</span>
+                    <span class="role-description">
+                        Help transport food to those who need it.
+                    </span>
+                </span>
+
+                <i class="fa-solid fa-arrow-right role-arrow"></i>
+            </a>
+
+        </div>
+
+        <div class="card-footer">
+            <i class="fa-solid fa-heart"></i>
+            <span>Every meal shared makes a difference.</span>
+        </div>
+
+    </main>
+
+    <footer class="page-footer">  
+        Food Donate &nbsp; • &nbsp; Reducing food waste, supporting communities
+    </footer>
+
 </body>
 </html>
