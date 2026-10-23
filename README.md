@@ -1,57 +1,82 @@
-# Food waste management system
-<!-- <img src="img/coverimage.jpeg"> -->
-<p>  The basic concept of this project  Food Waste Management is to collect theexcess/leftover food from donors such as hotels, restaurants, marriage halls, etc and distribute to  the  needy people .</p>
-<h2>Tools and Technologies</h2> 
-<ul>
- <li>Frontend : HTML, CSS,  JavaScript</li>
- <li>Backend  : php</li>
- <li>webserver: xampp server</li>
- <li>Database: MySQL </li>
-</ul>
+# Food Waste Management System
 
- <h2>The system has three modules. </h2>
-    <ul><li>User</li>
-    <li>Admin</li>
-    <li>Delivery</li></ul>
-   <br>
-    <p>The User module is designed for people who wish to donate their excess or leftover food to help reduce food wastage.The User module is responsible for accepting food donations from users who have excess food, such as marriage halls, restaurants, or individuals.The module provides users with the ability to register, login, and donate food. Users can select the type and quantity of food they want to donate, and the system will match their donation with the nearest needy people or organizations.The module also allows users to view their donations.The User module provides the information to the Admin module for further processing.
-   </p><br>
-   <p>
-      The Administrator module is for trusts, NGOs, and charities that are registered on the platform. The Admin module is designed for system administrators who manage the food distribution process. The Admin module receives information about the food donation from the User module and lists it for NGOs and charities to choose from.Admins can view and manage the list of donations received, including the type and quantity of food donated. NGOs and charities can select the food donation they need from the Admin module and request a pickup to the Delivery module.The Admin module is responsible for tracking the requests and keeping track of which organizations have taken which donations
-   </p><br>
-    <p>The Delivery Person module is for individuals who wish to participate in the food donation process by providing pickup and delivery services. Delivery personnel can register themselves on the platform .The Delivery Person module provides pickup and drop-off services for NGOs and charities who have requested a food donation.The Delivery Person module shows the pickup location and drop location of the food donation.
-    </p><br>
-    <p>Overall, the Food Waste Management System is designed to efficiently manage excess food and ensure that it is distributed to those in need. The User module accepts food donations, the Admin module lists them for NGOs and charities to choose from, and the Delivery Person module provides pickup and drop-off services. This system benefits the community by reducing food waste and helping those in need
-    </p>
-    <h3>User </h3>
-   <!-- <img src="img/User-module.jpg"> -->
-    <img src="img/mobile.jpg">
-    <h3>Admin </h3>
-    <img src="img/Admin.jpg">
-     <h3>Delivery </h3>
-    <img src="img/Delivery_module.jpg">
-    <h3>features:</h3>
-    <ul><li>Mobile Screen friendly website.</li>
-      <li>chatbot support</li>
-      <li>Secure Login</li>
-      </ul>
-      <h2>Mobile Screen friendly website.</h2>
-      <img src="img/responsive.gif">
-      <h2>chatbot support</h2>
-      <img src="img/chatbotsupport.jpg">
-      <h2>Secure Login</h2>
-      <img src="img/hash-flow.png">
-      <h2>How to run</h2>
-      <ol>
-       <li>Download the project zip file</li>
-       <li> Extract the file and copy the folder</li>
-       <li>Paste inside root directory(for xampp xampp/htdocs, for wamp wamp/www, for lamp var/www/Html)</li>
-       <li> Open PHPMyAdmin (http://localhost/phpmyadmin)</li>
-       <li> Create a database</li>
-       <li>Import demo.sql file(inside database folder)</li>
-       <li> Run the script http://localhost/folderName </li> </ol>
+A food donation and redistribution web application designed to reduce food waste by connecting donors, receivers, admins, and delivery personnel in one platform.
 
-<h2>view project :</h2>
+This project is built and maintained by Banaula and is intended for managing leftover food donations efficiently and responsibly.
 
-<a href="https://kishor-23.github.io/food-donate/index.html" > view demo</a>
+## Overview
 
+The system helps restaurants, hotels, marriage halls, and general donors donate surplus food instead of wasting it. The platform allows admin staff and delivery teams to coordinate pickup, distribution, and tracking so that food reaches people in need quickly and safely.
+
+## Features
+
+- Donor registration and food donation requests
+- Admin approval and management
+- Delivery personnel assignment
+- Food distribution tracking
+- Secure login for users and admins
+- Responsive layout for mobile and desktop
+- Chatbot support for basic assistance
+
+## Tech Stack
+
+- Frontend: HTML, CSS, JavaScript
+- Backend: PHP
+- Database: MySQL
+- Server: XAMPP / Apache / MySQL stack
+
+## Modules
+
+### User Module
+Users can donate excess or leftover food and manage their donation requests.
+
+### Admin Module
+Admins can monitor donations, verify users, assign delivery tasks, and manage the overall workflow.
+
+### Delivery Module
+Delivery personnel can register, receive pickup assignments, and complete deliveries to the needy community.
+
+## Project Structure
+
+- `index.html` — landing page
+- `home.html` — main homepage
+- `signup.php` / `signin.php` — user authentication
+- `admin/` — admin dashboard and related files
+- `delivery/` — delivery module
+- `database/` — SQL schema and demo data
+- `img/` — project images and assets
+- `connection.php` — database connection
+
+## Installation and Setup
+
+1. Download or clone the repository.
+2. Place the project folder inside your local web server directory:
+   - XAMPP: `xampp/htdocs/`
+   - WAMP: `wamp/www/`
+   - LAMP: `/var/www/html/`
+3. Start Apache and MySQL.
+4. Open PHPMyAdmin at `http://localhost/phpmyadmin`.
+5. Create a new database.
+6. Import the SQL file from the `database` folder.
+7. Open the app in your browser:
+   - `http://localhost/your-folder-name`
+
+## Run the Project
+
+After setup, start the application from your local server and access the homepage through the browser.
+
+## Demo
+
+This repository does not currently point to a live deployment that belongs to this project. If you want a public demo, set up GitHub Pages or deploy the app on a PHP hosting platform.
+
+## License
+
+This project is licensed under the MIT License.
+
+## Author
+
+Banaula
+
+## Contact
+
+For questions or collaboration, feel free to reach out through the GitHub profile associated with this repository.
